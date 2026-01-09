@@ -15,7 +15,7 @@ int main(){
     }
     float sum=0.0;
     for(int i=0;i<10;i++){
-        sum=sum+testMarks[i];
+        sum=sum+(float)testMarks[i];
     }
     float avg=sum/10.0;
     printf("Passed marks: ");
