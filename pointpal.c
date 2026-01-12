@@ -13,10 +13,10 @@
    return 1;
 }
 int main(){
-    printf("Enter a string (max 200 characters) to check if it is a palindrome\n");
-    char str1[200];
-    fgets(str1,sizeof(str1),stdin);
-   if(palin(str1)){
+    printf("Enter a string (max 50 characters) to check if it is a palindrome\n");
+    char str1[50];
+    scanf("%s", str1);
+   if(palin(str1)==1){
     printf("The string is a palindrome.\n");
    }
    else{
