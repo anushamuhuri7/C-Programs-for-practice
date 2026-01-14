@@ -25,7 +25,7 @@ int main(){
     printf("Enter the element to search for: ");
     scanf("%d", &x);
     int position = binsrch(arr, x, 0, size - 1);
-    printf("Position of element: %d\n", position);
+    printf("Position of element: %d\n", (position+1));
     free(arr);
     return 0;
 } /*code is now corrected*/
