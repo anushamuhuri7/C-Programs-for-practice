@@ -28,4 +28,4 @@ int main(){
     printf("Position of element: %d\n", position);
     free(arr);
     return 0;
-}
+} /*code is now corrected*/
