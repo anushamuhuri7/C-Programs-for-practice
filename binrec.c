@@ -2,12 +2,12 @@
 #include<stdlib.h>
 int binsrch(int arr[], int x, int low, int high){
     int mid=(low+high)/2;
-    if(x==mid)
+    if(x==arr[mid])
     return mid;
     else{
-        if(x>mid)
+        if(x>arr[mid])
         return binsrch(arr, x, mid+1, high);
-        if(x<mid)
+        else
         return binsrch(arr, x, low, mid-1);
     }
 }
