@@ -7,7 +7,7 @@ int main(){
     scanf("%s",str);
     for(int i=0;i<strlen(str);i++){
         if(str[i]>='a'&&str[i<='z']){
-        str[i]='a'+(str[i]-'a'+3)%26;/*edit*/
+        str[i]='a'+(str[i]-'a'+3)%26;/*edit: for example str[i]='c' then str[i]='a'+(('c'-'a')+3)='a'+5=f...*/
         }
     }
     printf("The result is: %s ", str);
