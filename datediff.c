@@ -12,5 +12,6 @@ int main(){
     printf("Enter first date (dd/mm/yyyy) (with spaces in between): ");
     scanf("%d %d %d", &d1.day, &d1.month, &d1.year);
     printf("Enter second date (dd/mm/yyyy) (with spaces in between): ");
+    scanf("%d %d %d", &d2.day, &d2.month, &d2.year);
     
 }
