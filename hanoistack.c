@@ -19,14 +19,19 @@ void display(Stack *a, Stack *b, Stack *c) {
     }
     printf("----\n");
 }
-
+void solve(int n, Stack *src, Stack *dst, Stack *aux, Stack *a, Stack *b, Stack *c) {
+    if (n == 0) return;
+    solve(n - 1, src, aux, dst, a, b, c);
+    int d = pop(src);
+    push(dst, d);
+    printf("Move %d from %c to %c\n", d, src->name, dst->name);
+    display(a, b, c);
+    solve(n - 1, aux, dst, src, a, b, c);
+}
 int main() {
     Stack sA = {{0}, -1, 'A'}, sB = {{0}, -1, 'B'}, sC = {{0}, -1, 'C'};
-    
     for (int i = 7; i >= 1; i--) push(&sA, i);
-
     display(&sA, &sB, &sC);
     solve(7, &sA, &sC, &sB, &sA, &sB, &sC);
-
     return 0;
 }
