@@ -16,7 +16,6 @@ int main(){
         printf("Enter Student %d ID Number : ", i + 1);
         scanf("%s", student[i].idNum);
         fprintf(wptr, "%s\t\t", student[i].idNum);
-    }
     for (j = 0; j < 4; ) {
             printf("Enter Question %d answer : ", j + 1);
             scanf("%d", &student[i].answer[j]);
@@ -29,4 +28,8 @@ int main(){
         }
         printf("\n");
     }
+    fprintf(wptr, "\n");
+  }
+  fclose(wptr);
+  return 0;
 }
