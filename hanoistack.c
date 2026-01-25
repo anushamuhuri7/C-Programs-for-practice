@@ -34,4 +34,4 @@ int main() {
     display(&sA, &sB, &sC);
     solve(7, &sA, &sC, &sB, &sA, &sB, &sC);
     return 0;
-}
+}//another commit
