@@ -36,3 +36,9 @@ int minStackTop(MinStack* obj) {
     }
     return INT_MIN;
 }
+int minStackGetMin(MinStack* obj) {
+    if (obj->top_index >= 0) {
+        return obj->min_data[obj->top_index];
+    }
+    return INT_MIN;
+}
