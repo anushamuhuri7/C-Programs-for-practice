@@ -24,3 +24,15 @@ void minStackPush(MinStack* obj, int x) {
         obj->min_data[obj->top_index] = (x < current_min) ? x : current_min;
     }
 }
+    void minStackPop(MinStack* obj) {
+    if (obj->top_index >= 0) {
+        obj->top_index--;
+    }
+   }
+
+int minStackTop(MinStack* obj) {
+    if (obj->top_index >= 0) {
+        return obj->data[obj->top_index];
+    }
+    return INT_MIN;
+}
