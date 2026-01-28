@@ -42,3 +42,21 @@ int minStackGetMin(MinStack* obj) {
     }
     return INT_MIN;
 }
+int main() {
+    MinStack stack;
+    minStackCreate(&stack);
+    
+    minStackPush(&stack, 5);
+    minStackPush(&stack, 2);
+    minStackPush(&stack, 10);
+    minStackPush(&stack, 1);
+    
+    printf("%d\n", minStackGetMin(&stack));
+    
+    minStackPop(&stack);
+    
+    printf("%d\n", minStackTop(&stack));
+    printf("%d\n", minStackGetMin(&stack));
+    
+    return 0;
+}
