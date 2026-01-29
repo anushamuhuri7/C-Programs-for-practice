@@ -46,7 +46,7 @@ int main() {
     MinStack stack;
     minStackCreate(&stack);
     
-    minStackPush(&stack, 5);
+    minStackPush(&stack, 5);/*adding elements to the stack*/
     minStackPush(&stack, 2);
     minStackPush(&stack, 10);
     minStackPush(&stack, 1);
