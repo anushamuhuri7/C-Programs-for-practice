@@ -53,7 +53,7 @@ int main() {
     
     printf("%d\n", minStackGetMin(&stack));
     
-    minStackPop(&stack);?*delete element from stack*/
+    minStackPop(&stack);/*delete element from stack*/
     
     printf("%d\n", minStackTop(&stack));
     printf("%d\n", minStackGetMin(&stack));
