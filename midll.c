@@ -1,16 +1,10 @@
-/*
-Find Middle element of a singly linked list in one pass.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct node {
     int data;
     struct node *ptr;
 }node;
-
-node* createlist(node* head, int data[],int n){
+node* newlist(node* head, int data[],int n){
     node* p;
     for(int i = 0; i<n;i++){
         if(head == NULL){
@@ -27,32 +21,26 @@ node* createlist(node* head, int data[],int n){
     }
     return head;
 }
-
-
 void print(node* head){
     node* p = head;
     for(;p != NULL; p=p->ptr){
         printf("data is: %d\n", p->data);
     }
 }
-
 int findmid(node* head){
-    node* p = head;                         //moves normally
-    node* q = head;                        //moves twice as fast as p
+    node* p = head;                       
+    node* q = head;                        
     while(q != NULL && q->ptr != NULL){
         p = p->ptr;
         q = q->ptr->ptr;
     }
     return p->data;
 }
-
 int main(){
-
     node* head = NULL;
-    int data[] = {1,2,3,4,5};
+    int data[] = {4,8,9,2,3};
     int size = sizeof(data) / sizeof(data[0]);
-    head = createlist(head, data, size);
-    //print(head);
+    head = newlist(head, data, size);
     int middle = findmid(head);
     printf("Middle element is %d\n\n",middle);
 }
