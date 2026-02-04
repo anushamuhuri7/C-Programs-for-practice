@@ -38,8 +38,14 @@ int findmid(node* head){
 }
 int main(){
     node* head = NULL;
-    int data[] = {4,8,9,2,3};
-    int size = sizeof(data) / sizeof(data[0]);
+    printf("Enter the size of linked list: ");
+    int size;
+    scanf("%d", &size);
+    int data[size];
+    printf("Enter the elements in the linked list: ");
+    for(int i=0;i<size;i++){
+        scanf("%d", &data[i]);
+    }
     head = newlist(head, data, size);
     int middle = findmid(head);
     printf("Middle element is %d\n\n",middle);
