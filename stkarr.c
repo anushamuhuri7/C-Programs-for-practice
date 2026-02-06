@@ -14,6 +14,10 @@ typedef struct {
 int is_full(MultiStack* ms) {
     return ms->free_top == -1;
 }
+int is_empty(MultiStack* ms, int sn) {
+    return ms->top[sn] == -1;
+}
+
 void push(MultiStack* ms, int val, int sn) {
     if (sn < 0 || sn >= ms->num_stacks) {
         printf("Invalid stack number!\n");
