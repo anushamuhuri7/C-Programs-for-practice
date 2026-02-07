@@ -30,6 +30,15 @@ MultiStack* create_stacks(int n, int m) {
     ms->next[m - 1] = -1;
 
     return ms;
+
+ int i = ms->top[sn];
+    ms->top[sn] = ms->next[i];
+    ms->next[i] = ms->free_top;
+    ms->free_top = i;
+
+    int val = ms->data[i];
+    printf("Popped %d from Stack %d\n", val, sn);
+    return val;
 }
 
 int is_full(MultiStack* ms) {
