@@ -103,3 +103,38 @@ void push(MultiStack* ms, int val, int sn) {
 
     printf("Pushed %d to Stack %d\n", val, sn);
 }
+int main(){
+    int n,m;
+    printf("Enter number of stacks: ");
+    scanf("%d", &n);
+    printf("Enter total capacity of array: ");
+    scanf("%d", &m);
+    MultiStack* ms=create_stacks(n,m);
+    int choice, sn, val;
+    while(1){
+        printf("\n 1. Push \n 2. Pop \n 3. Display \n 4. Exit \n Choice: ");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+            printf("Stack number (0 to %d): ", n-1);
+            scanf("%d", &sn);
+            scanf("Value to push: ");
+            scanf("%d", &val);
+            push(ms,val, sn);
+            break;
+            case 2:
+            printf("Stack number (0 to %d): ", n-1);
+            scanf("%d", &sn);
+            pop(ms, sn);
+            break;
+            case 3:
+            display_status(ms);
+            break;
+            case 4:
+            exit(0);
+            default:
+            printf("Invalid choice!\n");
+        }
+    }
+    return 0;
+}
