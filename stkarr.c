@@ -10,6 +10,7 @@ typedef struct {
     int capacity;
     int num_stacks;
 } MultiStack;
+
 MultiStack* create_stacks(int n, int m) {
     MultiStack* ms = (MultiStack*)malloc(sizeof(MultiStack));
     ms->capacity = m;
@@ -78,62 +79,56 @@ int pop(MultiStack* ms, int sn) {
     printf("Popped %d from Stack %d\n", val, sn);
     return val;
 }
-int is_full(MultiStack* ms) {
-    return ms->free_top == -1;
-}
-int is_empty(MultiStack* ms, int sn) {
-    return ms->top[sn] == -1;
-}
 
-void push(MultiStack* ms, int val, int sn) {
-    if (sn < 0 || sn >= ms->num_stacks) {
-        printf("Invalid stack number!\n");
-        return;
+void display_status(MultiStack* ms) {
+    printf("\n--- Current System State ---\n");
+    for (int i = 0; i < ms->num_stacks; i++) {
+        printf("Stack %d: ", i);
+        int curr = ms->top[i];
+        if (curr == -1) printf("[Empty]");
+        while (curr != -1) {
+            printf("%d ", ms->data[curr]);
+            curr = ms->next[curr];
+        }
+        printf("\n");
     }
-    if (is_full(ms)) {
-        printf("Stack Overflow: No space left in the shared array!\n");
-        return;
-    }
-
-    int i = ms->free_top;
-    ms->free_top = ms->next[i];
-    ms->next[i] = ms->top[sn];
-    ms->top[sn] = i;
-    ms->data[i] = val;
-
-    printf("Pushed %d to Stack %d\n", val, sn);
+    printf("----------------------------\n");
 }
-int main(){
-    int n,m;
+
+int main() {
+    int n, m;
     printf("Enter number of stacks: ");
     scanf("%d", &n);
     printf("Enter total capacity of array: ");
     scanf("%d", &m);
-    MultiStack* ms=create_stacks(n,m);
+
+    MultiStack* ms = create_stacks(n, m);
     int choice, sn, val;
-    while(1){
-        printf("\n 1. Push \n 2. Pop \n 3. Display \n 4. Exit \n Choice: ");
+
+    while (1) {
+        printf("\n1. Push\n2. Pop\n3. Display\n4. Exit\nChoice: ");
         scanf("%d", &choice);
-        switch(choice){
+
+        switch (choice) {
             case 1:
-            printf("Stack number (0 to %d): ", n-1);
-            scanf("%d", &sn);
-            scanf("Value to push: ");
-            scanf("%d", &val);
-            push(ms,val, sn);
-            break;
+                printf("Stack number (0 to %d): ", n - 1);
+                scanf("%d", &sn);
+                printf("Value to push: ");
+                scanf("%d", &val);
+                push(ms, val, sn);
+                break;
             case 2:
-            printf("Stack number (0 to %d): ", n-1);
-            scanf("%d", &sn);
-            pop(ms, sn);
-            break;
+                printf("Stack number (0 to %d): ", n - 1);
+                scanf("%d", &sn);
+                pop(ms, sn);
+                break;
             case 3:
-            display_status(ms);
-            break;
+                display_status(ms);
+                break;
             case 4:
-            exit(0);
+                exit(0);
             default:
-            printf("Invalid choice!\n");
+                printf("Invalid choice!\n");
         }
     }
     return 0;
