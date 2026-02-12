@@ -113,7 +113,7 @@ printf("Error\n");
 }
 return fst;
 }
-struct LL *del_by_val(struct LL *fst){
+struct LL *del_by_val(struct LL *fst){                //deletes a certain node by searching for its value
 if(fst==NULL){
 printf("List is empty can't delete\n");
 return fst;
