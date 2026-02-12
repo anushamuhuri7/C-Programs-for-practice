@@ -76,7 +76,7 @@ temp->link=NULL;
 return fst;
 }
 }
-struct LL *add_by_val(struct LL *fst){
+struct LL *add_by_val(struct LL *fst){                    //adds before or after a certain value
 if(fst==NULL){
 printf("List is empty\n");
 return fst;
