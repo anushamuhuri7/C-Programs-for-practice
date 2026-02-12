@@ -41,7 +41,7 @@ temp->link=newNode;
 return fst;
 }
 }
-struct LL *del_at_pos(struct LL *fst, int pos){
+struct LL *del_at_pos(struct LL *fst, int pos){             //deletes at required position
 if(fst==NULL){
 printf("List is empty can't delete\n");
 return fst;
