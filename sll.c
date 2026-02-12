@@ -12,7 +12,7 @@ newNode->link=NULL;
 }
 return newNode;
 }
-struct LL *add_at_pos(struct LL *fst, int ins, int pos){
+struct LL *add_at_pos(struct LL *fst, int ins, int pos){      //adds at required position
 struct LL *newNode=create_node(ins);
 if(pos==0){
 newNode->link=fst;
