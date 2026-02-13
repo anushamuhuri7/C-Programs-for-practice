@@ -6,3 +6,9 @@ typedef struct{
     int items[MAX];
     int top;
 }Stack;
+void initStack(Stack *s){
+    s->top=-1;
+}
+int isEmpty(Stack *s){
+    return s->top==-1;
+}
