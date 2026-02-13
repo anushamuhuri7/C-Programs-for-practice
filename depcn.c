@@ -2,3 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #define MAX 100
+typedef struct{
+    int items[MAX];
+    int top;
+}Stack;
