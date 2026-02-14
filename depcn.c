@@ -12,3 +12,8 @@ void initStack(Stack *s){
 int isEmpty(Stack *s){
     return s->top==-1;
 }
+void push(Stack *s, char val) {
+    if (s->top < MAX - 1) {
+        s->items[++(s->top)] = val;
+    }
+}
