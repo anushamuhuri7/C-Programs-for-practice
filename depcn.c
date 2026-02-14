@@ -17,3 +17,8 @@ void push(Stack *s, char val) {
         s->items[++(s->top)] = val;
     }
 }
+void pop(Stack *s) {
+    if (!isEmpty(s)) {
+        s->top--;
+    }
+}
