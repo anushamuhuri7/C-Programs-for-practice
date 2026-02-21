@@ -35,5 +35,12 @@ int calculateNestingDepth(const char *code) {
                 max_depth = current_depth;
             }
      }
+     else if (code[i] == '}') {
+            if (isEmpty(&s)) {
+                printf("Error: Unbalanced braces detected!\n");
+                return -1;
+            }
+            pop(&s);
+            current_depth--;
     }
 }
