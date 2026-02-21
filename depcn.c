@@ -27,3 +27,13 @@ int calculateNestingDepth(const char *code) {
     initStack(&s);
     int current_depth = 0;
     int max_depth = 0;
+     for (int i = 0; code[i] != '\0'; i++) {
+        if (code[i] == '{') {
+            push(&s, '{');
+            current_depth++;
+            if (current_depth > max_depth) {
+                max_depth = current_depth;
+            }
+     }
+    }
+}
