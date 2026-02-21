@@ -22,3 +22,8 @@ void pop(Stack *s) {
         s->top--;
     }
 }
+int calculateNestingDepth(const char *code) {
+    Stack s;
+    initStack(&s);
+    int current_depth = 0;
+    int max_depth = 0;
