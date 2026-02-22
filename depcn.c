@@ -43,4 +43,10 @@ int calculateNestingDepth(const char *code) {
             pop(&s);
             current_depth--;
     }
+    if (!isEmpty(&s)) {
+        printf("Error: Unclosed braces detected!\n");
+        return -1;
+    }
+
+    return max_depth;
 }
