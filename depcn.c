@@ -50,3 +50,17 @@ int calculateNestingDepth(const char *code) {
 
     return max_depth;
 }
+}
+int main(){
+    const char *sampleCode = "if(a) { while(b) { if(c) { d=1; } } }";
+
+    printf("Code string: %s\n", sampleCode);
+    
+    int depth = calculateNestingDepth(sampleCode);
+    
+    if (depth != -1){ 
+        printf("The maximum nesting depth is: %d\n", depth);
+    }
+
+    return 0;
+}
