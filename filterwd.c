@@ -10,3 +10,8 @@ typedef struct {
     int rear;
     int count;
 } Queue;
+void initQueue(Queue *q) {
+    q->front = 0;
+    q->rear = -1;
+    q->count = 0;
+}
