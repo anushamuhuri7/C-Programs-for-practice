@@ -22,3 +22,12 @@ void enqueue(Queue *q, const char *word) {
         q->count++;
     }
 }
+int isFiltered(Queue *q, const char *word) {
+    for (int i = 0; i < q->count; i++) {
+        int index = (q->front + i) % MAX_WORDS;
+        if (strcmp(q->words[index], word) == 0) {
+            return 1; // Found in filter list
+        }
+    }
+    return 0; // Not found
+}
