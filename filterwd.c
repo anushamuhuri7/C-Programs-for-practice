@@ -15,3 +15,10 @@ void initQueue(Queue *q) {
     q->rear = -1;
     q->count = 0;
 }
+void enqueue(Queue *q, const char *word) {
+    if (q->count < MAX_WORDS) {
+        q->rear = (q->rear + 1) % MAX_WORDS;
+        strncpy(q->words[q->rear], word, WORD_LEN);
+        q->count++;
+    }
+}
