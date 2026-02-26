@@ -31,3 +31,12 @@ int isFiltered(Queue *q, const char *word) {
     }
     return 0; // Not found
 }
+void filterText(const char *inputText, Queue *filterQueue) {
+    char text[500];
+    strcpy(text, inputText);
+    
+    char result[500] = "";
+    char *token = strtok(text, " ");
+    int first = 1;
+
+    printf("Filtering text...\n");
