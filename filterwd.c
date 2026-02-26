@@ -40,3 +40,17 @@ void filterText(const char *inputText, Queue *filterQueue) {
     int first = 1;
 
     printf("Filtering text...\n");
+    while (token != NULL) {
+        if (!isFiltered(filterQueue, token)) {
+            if (!first) {
+                strcat(result, " ");
+            }
+            strcat(result, token);
+            first = 0;
+        }
+        token = strtok(NULL, " ");
+    }
+
+    printf("Original: \"%s\"\n", inputText);
+    printf("Result:   \"%s\"\n", result);
+}
