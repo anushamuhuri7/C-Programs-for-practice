@@ -54,3 +54,18 @@ void filterText(const char *inputText, Queue *filterQueue) {
     printf("Original: \"%s\"\n", inputText);
     printf("Result:   \"%s\"\n", result);
 }
+int main() {
+    Queue filterQueue;
+    initQueue(&filterQueue);
+
+    // Enqueue words that should be filtered out
+    enqueue(&filterQueue, "world");
+    enqueue(&filterQueue, "bad");
+    enqueue(&filterQueue, "very");
+
+    const char *myText = "Hello world this is a very bad example";
+
+    filterText(myText, &filterQueue);
+
+    return 0;
+}
