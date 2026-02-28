@@ -13,3 +13,25 @@ void create_first(int value)
     first->data=value;
     first->next=NULL;
 }
+void insert_end(int value)
+{
+    temp=(node*)malloc(sizeof (node));
+    temp->data=value;
+    temp->next=NULL;
+    ttemp=first;
+    while(ttemp->next!=NULL)
+        ttemp=ttemp->next;
+    ttemp->next=temp;
+}
+void add_nodes(int value)
+{
+    temp=first;
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    ttemp=(node*)malloc(sizeof (node));
+    ttemp->data=value;
+    ttemp->next=NULL;
+    temp->next=ttemp;
+}
