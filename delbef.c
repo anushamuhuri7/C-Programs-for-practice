@@ -25,3 +25,12 @@ void add_nodes(int value)
     ttemp->next=NULL;
     temp->next=ttemp;
 }
+void delete_before(int b)
+{
+    temp=first;
+    while(temp->next->data!=b)
+    {
+        p=temp;
+        temp=temp->next;
+    }
+}
