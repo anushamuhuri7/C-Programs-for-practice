@@ -33,4 +33,9 @@ void delete_before(int b)
         p=temp;
         temp=temp->next;
     }
+    q=temp->next;
+    p->next=q;
+    temp->next=NULL;
+    free(temp);
+
 }
