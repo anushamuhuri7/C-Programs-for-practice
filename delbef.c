@@ -49,3 +49,23 @@ void display()
     }
     printf("\n");
 }
+int main()
+{
+    int b;
+    create_first(10);
+    add_nodes(20);
+    add_nodes(30);
+    add_nodes(40);
+    add_nodes(50);
+    add_nodes(60);
+    add_nodes(70);
+    display();
+
+    printf("Enter the data from before which you want to delete\n");
+    scanf("%d",&b);
+
+    printf("Update linked list is \n\n");
+    delete_before(b);
+    display();
+    return 0;
+}
