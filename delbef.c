@@ -39,3 +39,13 @@ void delete_before(int b)
     free(temp);
 
 }
+void display()
+{
+    temp=first;
+    while(temp!=NULL)
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+    printf("\n");
+}
