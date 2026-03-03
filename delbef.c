@@ -52,13 +52,19 @@ void display()
 int main()
 {
     int b;
-    create_first(10);
-    add_nodes(20);
-    add_nodes(30);
-    add_nodes(40);
-    add_nodes(50);
-    add_nodes(60);
-    add_nodes(70);
+    printf("Enter the number of nodes you want to create\n");
+    int n;
+    scanf("%d",&n);
+    printf("Enter the data for node 1\n");
+    int value;
+    scanf("%d",&value);
+    create_first(value);
+    for(int i=2;i<=n;i++)
+    {
+        printf("Enter the data for node %d\n",i);
+        scanf("%d",&value);
+        add_nodes(value);
+    }
     display();
 
     printf("Enter the data from before which you want to delete\n");
