@@ -14,3 +14,11 @@ void create_first(int value)
     first->data = value;
     first->next=NULL;
 }
+void add_nodes(int value)
+{
+    temp=first;
+    while(temp->next!=NULL)
+    {
+        temp = temp->next;
+    }
+}
