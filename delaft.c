@@ -8,3 +8,9 @@ typedef struct linked_list
 }node ;
 
 node *temp,*ttemp,*p,*first,*q;
+void create_first(int value)
+{
+    first=(node*)malloc(sizeof (node));
+    first->data = value;
+    first->next=NULL;
+}
