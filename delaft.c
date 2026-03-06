@@ -26,3 +26,11 @@ void add_nodes(int value)
     ttemp->next = NULL;
     temp->next = ttemp;
 }
+void delete_after(int a)
+{
+    temp = first;
+    while (temp->data != a)
+    {
+        temp = temp->next;
+    }
+}
