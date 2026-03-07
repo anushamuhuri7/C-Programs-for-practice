@@ -33,4 +33,8 @@ void delete_after(int a)
     {
         temp = temp->next;
     }
+    p = temp->next;
+    q = p->next;
+    temp->next = q;
+    p->next = NULL;
 }
