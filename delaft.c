@@ -38,3 +38,13 @@ void delete_after(int a)
     temp->next = q;
     p->next = NULL;
 }
+void display()
+{
+    temp = first;
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
