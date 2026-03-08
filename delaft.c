@@ -48,3 +48,25 @@ void display()
     }
     printf("\n");
 }
+int main()
+{
+    int x;
+    int a;
+    printf("linked list is : \n");
+    create_first(10);
+    add_nodes(20);
+    add_nodes(30);
+    add_nodes(40);
+    add_nodes(50);
+    add_nodes(60);
+    add_nodes(70);
+    display();
+
+    printf("Enter the value where you want to delete after\n ");
+    scanf("%d", &a); // after value = a
+
+    delete_after(a);
+    display();
+
+    return 0;
+}
