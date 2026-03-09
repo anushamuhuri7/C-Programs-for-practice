@@ -52,16 +52,17 @@ int main()
 {
     int x;
     int a;
-    printf("linked list is : \n");
-    create_first(10);
-    add_nodes(20);
-    add_nodes(30);
-    add_nodes(40);
-    add_nodes(50);
-    add_nodes(60);
-    add_nodes(70);
-    display();
-
+    printf("Enter the number of nodes you want to create\n ");
+    scanf("%d", &x);
+    printf("Enter the value of first node\n ");
+    scanf("%d", &a);
+    create_first(a);
+    for (int i = 1; i < x; i++)
+    {
+        printf("Enter the value of node %d\n ", i + 1);
+        scanf("%d", &a);
+        add_nodes(a);
+    }
     printf("Enter the value where you want to delete after\n ");
     scanf("%d", &a); // after value = a
 
