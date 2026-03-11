@@ -15,10 +15,10 @@ void merge(int a[], int low, int mid, int high)
         b[bArrIdx++] = a[left++];
     while (right <= high)
         b[bArrIdx++] = a[right++];
-    printf("The sorted array is: ");
-    for (k = 0; k < n; k++)
-        printf("%d ", b[k]);
-    printf("\n");
+    /* reset index to start of temp array before copying back */
+    bArrIdx = 0;
+    while (low <= high)
+        a[low++] = b[bArrIdx++];
     free(b);
 }
 void msort(int a[], int low, int high)
@@ -40,5 +40,9 @@ int main()
         printf("%d ", a[i]);
     printf("\n");
     msort(a, 0, n - 1);
+    printf("The sorted array is: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
     return 0;
 }
