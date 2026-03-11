@@ -11,6 +11,10 @@ void merge(int a[], int low, int mid, int high)
         else
             b[bArrIdx++] = a[right++];
     }
+    while (left <= mid)
+        b[bArrIdx++] = a[left++];
+    while (right <= high)
+        b[bArrIdx++] = a[right++];
     printf("The sorted array is: ");
     for (k = 0; k < n; k++)
         printf("%d ", b[k]);
