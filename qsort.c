@@ -6,7 +6,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = temp;
 }
-void quick_sort(int a[], int low, int high)
+int partition(int a[], int low, int high)
 {
     if (low < high)
     {
@@ -25,4 +25,11 @@ void quick_sort(int a[], int low, int high)
      swap(&a[i + 1], &a[high]);
     return (i + 1);
 }
-void quick_sort()
+void quick_sort(int a[],int low,int high){
+      if(low<high){
+       int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    
+}
+}
