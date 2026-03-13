@@ -21,4 +21,8 @@ void quick_sort(int a[], int low, int high)
             }
         }
     }
+
+     swap(&a[i + 1], &a[high]);
+    return (i + 1);
 }
+void quick_sort()
