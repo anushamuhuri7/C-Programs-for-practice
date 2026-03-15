@@ -8,10 +8,11 @@ void swap(int *a, int *b)
 }
 int partition(int a[], int low, int high)
 {
+    int i;
     if (low < high)
     {
         int pivot = a[high];
-        int i = low - 1;
+        i = low - 1;
         for (int j = low; j < high; j++)
         {
             if (a[j] < pivot)
@@ -21,15 +22,15 @@ int partition(int a[], int low, int high)
             }
         }
     }
-
-     swap(&a[i + 1], &a[high]);
+    swap(&a[i + 1], &a[high]);
     return (i + 1);
 }
-void quick_sort(int a[],int low,int high){
-      if(low<high){
-       int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
-    
-}
+void quick_sort(int a[], int low, int high)
+{
+    if (low < high)
+    {
+        int pi = partition(a, low, high);
+        quick_sort(a, low, pi - 1);
+        quick_sort(a, pi + 1, high);
+    }
 }
