@@ -34,3 +34,16 @@ void quick_sort(int a[], int low, int high)
         quick_sort(a, pi + 1, high);
     }
 }
+int main()
+{
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    int a[n];
+    printf("Enter the elements: ");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    return 0;
+}
