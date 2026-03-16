@@ -44,6 +44,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
+        printf("\n");
     }
     quick_sort(a, 0, n - 1);
     printf("Sorted array: ");
