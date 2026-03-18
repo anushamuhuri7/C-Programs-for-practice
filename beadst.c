@@ -18,5 +18,7 @@ void bead_sort(int *a, int n)
         sum = 0;
         for (i = 0; i < n; i++)
             sum += beads[j * n + i];
+        for (i = 0; i < sum; i++)
+            a[i] = a[i] + 1;
     }
 }
