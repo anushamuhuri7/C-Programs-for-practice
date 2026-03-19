@@ -25,3 +25,13 @@ void bead_sort(int *a, int n)
     }
     free(beads);
 }
+int main()
+{
+    int a[] = {5, 3, 1, 7, 4};
+    int n = sizeof(a) / sizeof(a[0]);
+    bead_sort(a, n);
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
