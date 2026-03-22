@@ -14,3 +14,12 @@ struct node *createnode(int data)
     newnode->right = NULL;
     return newnode;
 }
+void preorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        printf("%d ", root->data);
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
