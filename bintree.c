@@ -23,6 +23,14 @@ void preorder(struct node *root)
         preorder(root->right);
     }
 }
+int cnt_leaves(struct node *root)
+{
+    if (root == NULL)
+        return 0;
+    if (root->left == NULL && root->right == NULL)
+        return 1;
+    return cnt_leaves(root->left) + cnt_leaves(root->right);
+}
 int main()
 {
     struct node *root = createnode(1);
