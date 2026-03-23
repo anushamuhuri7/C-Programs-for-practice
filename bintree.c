@@ -2,11 +2,11 @@
 #include <stdlib.h>
 struct node
 {
-    int data;
+    char data;
     struct node *left;
     struct node *right;
 };
-struct node *createnode(int data)
+struct node *createnode(char data)
 {
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     newnode->data = data;
@@ -18,7 +18,7 @@ void preorder(struct node *root)
 {
     if (root != NULL)
     {
-        printf("%d ", root->data);
+        printf("%c ", root->data);
         preorder(root->left);
         preorder(root->right);
     }
@@ -33,12 +33,23 @@ int cnt_leaves(struct node *root)
 }
 int main()
 {
-    struct node *root = createnode(1);
-    root->left = createnode(2);
-    root->right = createnode(3);
-    root->left->left = createnode(4);
-    root->left->right = createnode(5);
+    struct node *root = createnode('A');
+    root->left = createnode('B');
+    root->right = createnode('C');
+    root->left->left = createnode('D');
+    root->left->right = createnode('E');
+    root->right->left = createnode('F');
+    root->right->right = createnode('G');
+    root->right->right->left = createnode('L');
+    root->right->right->right = createnode('M');
+    root->left->left->left = createnode('H');
+    root->left->left->right = createnode('I');
+    root->left->right->left = createnode('J');
+    root->left->right->right = createnode('K');
+    root->left->left->left->left = createnode('N');
+    root->left->left->left->right = createnode('O');
     printf("Preorder traversal: ");
     preorder(root);
+    printf("\nNumber of leaves: %d\n", cnt_leaves(root));
     return 0;
 }
