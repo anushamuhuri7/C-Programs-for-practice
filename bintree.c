@@ -38,7 +38,7 @@ int cnt_leaves(struct node *root)
         return 0;
     if (root->left == NULL && root->right == NULL)
         return 1;
-    return cnt_leaves(root->left) + cnt_leaves(root->right);
+    return cnt_leaves(root->left) + cnt_leaves(root->right) + 1;
 }
 int main()
 {
