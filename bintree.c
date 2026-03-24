@@ -23,6 +23,15 @@ void preorder(struct node *root)
         preorder(root->right);
     }
 }
+void inorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        inorder(root->left);
+        printf("%c ", root->data);
+        inorder(root->right);
+    }
+}
 int cnt_leaves(struct node *root)
 {
     if (root == NULL)
