@@ -59,6 +59,8 @@ int main()
     root->left->left->left->right = createnode('O');
     printf("Preorder traversal: ");
     preorder(root);
+    printf("\nInorder traversal: ");
+    inorder(root);
     printf("\nNumber of leaves: %d\n", cnt_leaves(root));
     return 0;
 }
