@@ -6,7 +6,7 @@ struct node
     struct node *left;
     struct node *right;
 };
-void lookup(struct node *root, int target)
+void lookup1(struct node *root, int target)
 {
     if (root == NULL)
         return;
@@ -17,4 +17,17 @@ void lookup(struct node *root, int target)
     }
     lookup(root->left, target);
     lookup(root->right, target);
+}
+void lookup2(struct node *root, int target)
+{
+    while (root != NULL)
+    {
+        if (root->data == target)
+        {
+            printf("Found\n");
+            return;
+        }
+        root = root->data > target ? root->left : root->right;
+    }
+    printf("Not Found\n");
 }
