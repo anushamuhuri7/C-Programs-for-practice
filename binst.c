@@ -27,7 +27,10 @@ void lookup2(struct node *root, int target)
             printf("Found\n");
             return;
         }
-        root = root->data > target ? root->left : root->right;
+        if (root->data > target)
+            root = root->left;
+        else
+            root = root->right;
     }
     printf("Not Found\n");
 }
