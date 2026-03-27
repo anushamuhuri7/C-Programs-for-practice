@@ -34,3 +34,11 @@ void lookup2(struct node *root, int target)
     }
     printf("Not Found\n");
 }
+struct node *newNode(int data)
+{
+    struct node *node = (struct node *)malloc(sizeof(struct node));
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
+}
