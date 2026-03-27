@@ -42,3 +42,22 @@ struct node *newNode(int data)
     node->right = NULL;
     return node;
 }
+int main()
+{
+    struct node *root = newNode(10);
+    root->left = newNode(5);
+    root->right = newNode(15);
+    root->left->left = newNode(3);
+    root->left->right = newNode(7);
+    root->right->left = newNode(12);
+    root->right->right = newNode(18);
+
+    int target = 7;
+    printf("Using lookup1:\n");
+    lookup1(root, target);
+
+    printf("Using lookup2:\n");
+    lookup2(root, target);
+
+    return 0;
+}
