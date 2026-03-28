@@ -36,11 +36,19 @@ void lookup2(struct node *root, int target)
 }
 struct node *newNode()
 {
+
     struct node *node = (struct node *)malloc(sizeof(struct node));
     printf("Enter data for the node: ");
-    scanf("%d", &node->data); // Assuming the user will input an integer for
-    node->left = NULL;
-    node->right = NULL;
+    scanf("%d", &node->data);
+    if (node->data == -1)
+    {
+        free(node);
+        return NULL;
+    }
+    printf("Enter left child (-1 for no node) : ");
+    node->left = newNode();
+    printf("Enter right child (-1 for no node) : ");
+    node->right = newNode();
     return node;
 }
 int main()
