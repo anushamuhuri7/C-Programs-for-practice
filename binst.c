@@ -45,9 +45,9 @@ struct node *newNode()
         free(node);
         return NULL;
     }
-    printf("Enter left child (-1 for no node) : ");
+    printf("Enter left child (-1 for no node) of %d: ", node->data);
     node->left = newNode();
-    printf("Enter right child (-1 for no node) : ");
+    printf("Enter right child (-1 for no node) of %d: ", node->data);
     node->right = newNode();
     return node;
 }
@@ -62,8 +62,10 @@ int main()
     root->right->right = newNode(18);*/
     printf("Create Binary Tree:\n");
     root = newNode();
-
-    int target = 7;
+    printf("Binary Tree created.\n");
+    printf("Enter target value to search: ");
+    int target;
+    scanf("%d", &target);
     printf("Using lookup1:\n");
     lookup1(root, target);
 
