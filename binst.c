@@ -34,23 +34,26 @@ void lookup2(struct node *root, int target)
     }
     printf("Not Found\n");
 }
-struct node *newNode(int data)
+struct node *newNode()
 {
     struct node *node = (struct node *)malloc(sizeof(struct node));
-    node->data = data;
+    printf("Enter data for the node: ");
+    scanf("%d", &node->data); // Assuming the user will input an integer for
     node->left = NULL;
     node->right = NULL;
     return node;
 }
 int main()
 {
-    struct node *root = newNode(10);
-    root->left = newNode(5);
+    struct node *root = NULL;
+    /*root->left = newNode(5);
     root->right = newNode(15);
     root->left->left = newNode(3);
     root->left->right = newNode(7);
     root->right->left = newNode(12);
-    root->right->right = newNode(18);
+    root->right->right = newNode(18);*/
+    printf("Create Binary Tree:\n");
+    root = newNode();
 
     int target = 7;
     printf("Using lookup1:\n");
