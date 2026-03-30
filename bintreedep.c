@@ -14,3 +14,17 @@ struct node *newnode(int data)
     temp->right = NULL;
     return temp;
 }
+int calcd(struct node *root)
+{
+    if (root == NULL)
+        return 0;
+    else
+    {
+        int ldepth = calcd(root->left);
+        int rdepth = calcd(root->right);
+        if (ldepth > rdepth)
+            return (ldepth + 1);
+        else
+            return (rdepth + 1);
+    }
+}
