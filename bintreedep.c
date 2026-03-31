@@ -28,3 +28,13 @@ int calcd(struct node *root)
             return (rdepth + 1);
     }
 }
+int main()
+{
+    struct node *root = newnode(1);
+    root->left = newnode(2);
+    root->right = newnode(3);
+    root->left->left = newnode(4);
+    root->left->right = newnode(5);
+    printf("Height of tree is %d", calcd(root));
+    return 0;
+}
