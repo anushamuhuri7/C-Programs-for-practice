@@ -47,6 +47,8 @@ int main()
     root->right = newnode(3);
     root->left->left = newnode(4);
     root->left->right = newnode(5);*/
+    printf("Binary tree created\n");
+    printf("Calculating height of tree\n");
     printf("Height of tree is %d", calcd(root));
     return 0;
 }
