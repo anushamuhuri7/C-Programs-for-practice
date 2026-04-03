@@ -33,3 +33,7 @@ struct node *insert(struct node *root, int value)
     }
     return root;
 }
+int main()
+{
+    return 0;
+}
