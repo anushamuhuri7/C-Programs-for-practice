@@ -33,6 +33,12 @@ struct node *insert(struct node *root, int value)
     }
     return root;
 }
+struct node *findMin(struct node *root)
+{
+    while (root->left != NULL)
+        root = root->left;
+    return root;
+}
 int main()
 {
     return 0;
