@@ -39,7 +39,10 @@ struct node *findMin(struct node *root)
         root = root->left;
     return root;
 }
+
 int main()
 {
+    struct node *root = NULL;
+    root = insert(root, 50);
     return 0;
 }
