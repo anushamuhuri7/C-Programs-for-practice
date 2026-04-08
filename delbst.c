@@ -74,14 +74,27 @@ struct node *deleteNode(struct node *root, int value)
     }
     return root;
 }
+void inorder(struct node *root)
+{
+    if (root != NULL)
+    {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
 int main()
 {
     struct node *root = NULL;
     printf("Create Binary Tree: ");
     root = insert(root);
     printf("Binary Tree created.\n");
+
     printf("Enter value to delete: ");
     int value;
     scanf("%d", &value);
+    root = deleteNode(root, value);
+    printf("Node with value %d deleted from the binary tree.\n", value);
+
     return 0;
 }
