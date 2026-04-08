@@ -89,12 +89,17 @@ int main()
     printf("Create Binary Tree: ");
     root = insert(root);
     printf("Binary Tree created.\n");
+    printf("Inorder Traversal: ");
+    inorder(root);
+    printf("\n");
 
     printf("Enter value to delete: ");
     int value;
     scanf("%d", &value);
     root = deleteNode(root, value);
     printf("Node with value %d deleted from the binary tree.\n", value);
-
+    printf("Inorder Traversal after deletion: ");
+    inorder(root);
+    printf("\n");
     return 0;
 }
