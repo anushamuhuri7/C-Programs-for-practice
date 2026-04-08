@@ -19,17 +19,20 @@ struct node *createNode(int value)
     newNode->right = NULL;
     return newNode;
 }
-struct node *insert(struct node *root, int value)
+struct node *insert(struct node *root)
 {
+    printf("Enter value to insert: ");
+    int value;
+    scanf("%d", &value);
     if (root == NULL)
         return createNode(value);
     if (value < root->data)
     {
-        root->left = insert(root->left, value);
+        root->left = insert(root->left);
     }
     else if (value > root->data)
     {
-        root->right = insert(root->right, value);
+        root->right = insert(root->right);
     }
     return root;
 }
@@ -43,6 +46,7 @@ struct node *findMin(struct node *root)
 int main()
 {
     struct node *root = NULL;
-    root = insert(root, 50);
+    printf("Create Binary Tree: ");
+    root = insert(root);
     return 0;
 }
