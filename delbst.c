@@ -74,11 +74,14 @@ struct node *deleteNode(struct node *root, int value)
     }
     return root;
 }
-
 int main()
 {
     struct node *root = NULL;
     printf("Create Binary Tree: ");
     root = insert(root);
+    printf("Binary Tree created.\n");
+    printf("Enter value to delete: ");
+    int value;
+    scanf("%d", &value);
     return 0;
 }
