@@ -19,20 +19,17 @@ struct node *createNode(int value)
     newNode->right = NULL;
     return newNode;
 }
-struct node *insert(struct node *root)
+struct node *insertValue(struct node *root, int value)
 {
-    printf("Enter value to insert: ");
-    int value;
-    scanf("%d", &value);
     if (root == NULL)
         return createNode(value);
     if (value < root->data)
     {
-        root->left = insert(root->left);
+        root->left = insertValue(root->left, value);
     }
     else if (value > root->data)
     {
-        root->right = insert(root->right);
+        root->right = insertValue(root->right, value);
     }
     return root;
 }
@@ -87,13 +84,16 @@ int main()
 {
     struct node *root = NULL;
     char choice;
+    int value;
 
     printf("=== Binary Search Tree Operations ===\n");
     printf("Create Binary Tree:\n");
 
     do
     {
-        root = insert(root);
+        printf("Enter value to insert: ");
+        scanf("%d", &value);
+        root = insertValue(root, value);
         printf("Do you want to insert more nodes? (y/n): ");
         scanf(" %c", &choice);
     } while (choice == 'y' || choice == 'Y');
@@ -104,7 +104,6 @@ int main()
     printf("\n");
 
     printf("\nEnter value to delete: ");
-    int value;
     scanf("%d", &value);
     root = deleteNode(root, value);
     printf("Node with value %d deleted from the binary tree.\n", value);
