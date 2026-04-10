@@ -86,14 +86,24 @@ void inorder(struct node *root)
 int main()
 {
     struct node *root = NULL;
-    printf("Create Binary Tree: ");
-    root = insert(root);
-    printf("Binary Tree created.\n");
+    char choice;
+
+    printf("=== Binary Search Tree Operations ===\n");
+    printf("Create Binary Tree:\n");
+
+    do
+    {
+        root = insert(root);
+        printf("Do you want to insert more nodes? (y/n): ");
+        scanf(" %c", &choice);
+    } while (choice == 'y' || choice == 'Y');
+
+    printf("\nBinary Tree created.\n");
     printf("Inorder Traversal: ");
     inorder(root);
     printf("\n");
 
-    printf("Enter value to delete: ");
+    printf("\nEnter value to delete: ");
     int value;
     scanf("%d", &value);
     root = deleteNode(root, value);
