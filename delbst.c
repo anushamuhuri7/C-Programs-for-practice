@@ -19,37 +19,38 @@ struct node *createNode(int value)
     newNode->right = NULL;
     return newNode;
 }
-struct node *insertValue(struct node *root, int value)
+struct node *insert(struct node *root, int value)
 {
     if (root == NULL)
         return createNode(value);
     if (value < root->data)
     {
-        root->left = insertValue(root->left, value);
+        root->left = insert(root->left, value);
     }
     else if (value > root->data)
     {
-        root->right = insertValue(root->right, value);
+        root->right = insert(root->right, value);
     }
     return root;
 }
-struct node *findMin(struct node *root)
+struct node *minValueNode(struct node *node)
 {
-    while (root->left != NULL)
-        root = root->left;
-    return root;
+    struct node *current = node;
+    while (current && current->left != NULL)
+        current = current->left;
+    return current;
 }
-struct node *deleteNode(struct node *root, int value)
+struct node *deleteNode(struct node *root, int key)
 {
     if (root == NULL)
         return root;
-    if (value < root->data)
+    if (key < root->data)
     {
-        root->left = deleteNode(root->left, value);
+        root->left = deleteNode(root->left, key);
     }
-    else if (value > root->data)
+    else if (key > root->data)
     {
-        root->right = deleteNode(root->right, value);
+        root->right = deleteNode(root->right, key);
     }
     else
     {
@@ -65,7 +66,7 @@ struct node *deleteNode(struct node *root, int value)
             free(root);
             return temp;
         }
-        struct node *temp = findMin(root->right);
+        struct node *temp = minValueNode(root->right);
         root->data = temp->data;
         root->right = deleteNode(root->right, temp->data);
     }
@@ -83,31 +84,24 @@ void inorder(struct node *root)
 int main()
 {
     struct node *root = NULL;
-    char choice;
-    int value;
-
-    printf("=== Binary Search Tree Operations ===\n");
-    printf("Create Binary Tree:\n");
-
-    do
+    int choice, val;
+    printf("--- Binary Search Tree ---\n");
+    printf("Enter values for BST. Enter -1 to stop.\n");
+    while (1)
     {
-        printf("Enter value to insert: ");
-        scanf("%d", &value);
-        root = insertValue(root, value);
-        printf("Do you want to insert more nodes? (y/n): ");
-        scanf(" %c", &choice);
-    } while (choice == 'y' || choice == 'Y');
-
-    printf("\nBinary Tree created.\n");
-    printf("Inorder Traversal: ");
+        printf("Enter value: ");
+        scanf("%d", &val);
+        if (val == -1)
+            break;
+        root = insert(root, val);
+    }
+    printf("\nCurrent Inorder sequence: ");
     inorder(root);
     printf("\n");
-
-    printf("\nEnter value to delete: ");
-    scanf("%d", &value);
-    root = deleteNode(root, value);
-    printf("Node with value %d deleted from the binary tree.\n", value);
-    printf("Inorder Traversal after deletion: ");
+    printf("\nEnter target value to delete: ");
+    scanf("%d", &val);
+    root = deleteNode(root, val);
+    printf("Inorder sequence after deletion: ");
     inorder(root);
     printf("\n");
     return 0;
